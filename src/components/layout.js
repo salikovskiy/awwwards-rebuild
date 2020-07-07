@@ -9,6 +9,7 @@ import { normalize } from "styled-normalize"
 //Components
 import Header from "./header"
 import Cursor from "./customCursor"
+import Navigation from '../components/navigation'
 
 //Context
 import {
@@ -67,11 +68,14 @@ const Layout = ({ children }) => {
     dispatch({ type: "CURSOR_TYPE", cursorType: cursorType })
   }
 
+  console.log(Navigation)
+
   return (
     <ThemeProvider theme={currentTheme === "dark" ? darkTheme : lightTheme}>
       <GlobalStyle />
       <Cursor />
       <Header onCursor={onCursor} />
+      <Navigation />
       <main>{children}</main>
     </ThemeProvider>
   )
